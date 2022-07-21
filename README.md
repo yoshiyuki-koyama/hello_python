@@ -1,2 +1,2 @@
 # hello_python
-Python練習用
+Python練習用リポジトリ
