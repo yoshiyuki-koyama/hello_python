@@ -4,10 +4,12 @@
 ## 仮想環境の作り方(Windows PowerShell)
 参考資料："パッケージの操作 - Learn | Microsoft"[^1]
 
-### 仮想環境を作る(envは任意の名前でOK)
+### 仮想環境を作る
 ```
 python -m venv env
 ```
+(envは任意の名前でOK。仮想環境のフォルダ名になる。)
+
 ### 仮想環境に入る前の事前準備
 
 PowerShellのスクリプトファイル(.ps1)を実行するために実行ポリシーの設定[^2]が必要となる。
@@ -39,6 +41,13 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process
 deactivate
 ```
 
+## VisualStudioCodeのデバッグ設定
+Run and Debugアイコン -> "create a launch.json file." -> "Python File"でlaunch.jsonファイルが作成される。
+この状態だと現在VisualStudioCodeで選択されているファイルがデバッグされるが、`__main__.py`などに固定したいときは
+"configurations"の"program"のところで指定すると変更できる[^5][^6]。
+例) `"program" : "${workspaceFolder}/src/__main__.py"`
+(変更したとき時は"name"も変えた方がいいと思う)
+
 ## 参考
 [^1]:パッケージの操作 - Learn (Pythonでプロジェクトを作成して管理する) : Microsoft
 https://docs.microsoft.com/ja-jp/learn/modules/python-create-manage-projects/2-set-up-project
@@ -51,3 +60,9 @@ https://www.python.jp/install/windows/venv.html
 
 [^4]:Windows版VisualStudioCodeで、スムーズvenvを使うための設定まとめ: attakei
 https://attakei.net/blog/2019/windows-vscode-venv/
+
+[^5]:Debugging in Visual Studio Code (Launch.json attributes) : Visual Studio Code Docs : Microsoft
+https://code.visualstudio.com/docs/editor/debugging#_launchjson-attributes
+
+[^6]:Visual Studio Code Variables Reference : Visual Studio Code Docs : Microsoft
+https://code.visualstudio.com/docs/editor/variables-reference
