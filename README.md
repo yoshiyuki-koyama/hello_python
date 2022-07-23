@@ -9,13 +9,25 @@
 python -m venv env
 ```
 ### 仮想環境に入る前の事前準備
+
 PowerShellのスクリプトファイル(.ps1)を実行するために下記コマンドを実行する[^2][^3]。
+#### PowerShell
 ```
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process
 ```
 ※`-Scope`の設定次第(CurrentUserなど)では一度だけ実行すればOKだけど、セキュリティ面で心配だったので`Process`にした。
-
-
+#### VisualStudioCode の統合ターミナル
+こちらのサイト(https://attakei.net/blog/2019/windows-vscode-venv/)[^4]を参考に設定。
+一度下記設定をすれば、設定したWorkSpaceではVisualStudioCodeを立ち上げるだけで設定が反映される。
+1. File -> Preference -> Settings -> WorkSpaceタブを選択
+2. Terminal > Integrated > Env:Windows で　Edit in settings.json を選択して、下記のように追加。環境変数としてExecutionPolicyを設定している。
+```
+{
+    "terminal.integrated.env.windows": {
+        "PSExecutionPolicyPreference": "RemoteSigned"
+    }
+}
+```
 ### 仮想環境に入る
 ```
 .\env\Scripts\Activate.ps1
@@ -35,3 +47,6 @@ https://www.python.jp/install/windows/venv.html
 
 [^3]:実行ポリシーについて - PowerShell | Microsoft Docs : Microsoft
 https://docs.microsoft.com/ja-jp/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-7.2
+
+[^4]:Windows版VisualStudioCodeで、スムーズvenvを使うための設定まとめ: attakei
+https://attakei.net/blog/2019/windows-vscode-venv/
