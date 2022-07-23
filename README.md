@@ -39,7 +39,7 @@ deactivate
 ```
 
 ## 参考
-[^1]パッケージの操作 - Learn (Pythonでプロジェクトを作成して管理する) : Microsoft
+[^1]:パッケージの操作 - Learn (Pythonでプロジェクトを作成して管理する) : Microsoft
 https://docs.microsoft.com/ja-jp/learn/modules/python-create-manage-projects/2-set-up-project
 
 [^2]:仮想環境：Python環境構築ガイド(Windows環境のPython) : Python Japan
