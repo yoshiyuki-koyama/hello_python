@@ -17,7 +17,7 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process
 ```
 ※`-Scope`の設定次第(CurrentUserなど)では一度だけ実行すればOKだけど、セキュリティ面で心配だったので`Process`にした。
 #### VisualStudioCode の統合ターミナル
-こちらのサイト(https://attakei.net/blog/2019/windows-vscode-venv/)[^4]を参考に設定。
+こちらのサイト(https://attakei.net/blog/2019/windows-vscode-venv/ )[^4]を参考に設定。
 一度下記設定をすれば、設定したWorkSpaceではVisualStudioCodeを立ち上げるだけで設定が反映される。
 1. File -> Preference -> Settings -> WorkSpaceタブを選択
 2. Terminal > Integrated > Env:Windows で　Edit in settings.json を選択して、下記のように追加。環境変数としてExecutionPolicyを設定している。
