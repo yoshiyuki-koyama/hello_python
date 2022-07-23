@@ -2,13 +2,6 @@
 import flow_controls
 import rw_file
 
-def Add(a:int, b:int):
-    return a+b
-
-
-
-
-
 def main():
     # print
     print("Hello, world!")
@@ -38,8 +31,6 @@ def main():
                 #file読み書き
                 rw_file.rw_file()
         
-
-
 
 if __name__ == '__main__':
     main()
