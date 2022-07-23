@@ -1,35 +1,43 @@
 # 関数の宣言
+import flow_controls
+import rw_file
+
 def Add(a:int, b:int):
     return a+b
 
+
+
+
+
 def main():
     # print
-    print("hello, world")
+    print("Hello, world!")
 
-    # 標準入力
-    name1 = input("Enter, your name.\n")
-    print("1st: Your name is ", name1)
-    name2 = input("Enter, your name AGAIN.\n")
-    print("2nd: Your name is ", name1)
+    while True:
+        menu_string = "\nEnter the following menu number or character.\n1:If-elif-else 2:Loop 3:Match 4:File q:Exit\n"
+        # 標準入力
+        input_str = input(menu_string)
+        if not input_str.isdecimal():
+            if input_str == "q":
+                print("\nGood Bye.\n")
+                return
+            else:
+                continue
 
-    # if文
-    if name1 == name2:
-        print("1st and 2nd name is SAME!")
-    elif name1.lower() == name2.lower():
-        print("1st and 2nd name is DIFFERENT! But Spells are SAME!")
-    else:
-        print("1st and 2nd name is DIFFERENT!")
-
-    # for文
-    for cnt in range(3):
-        print("[for] count = " + str(cnt))
-
-    # while文
-    cnt = 0
-    while cnt < 3:
-        print("[while] count = " + str(cnt))
-        cnt+=1
-
+        match int(input_str):
+            case 1:
+                #if-elif-else文
+                flow_controls.if_elif_else()
+            case 2:
+                #for文 while文
+                flow_controls.loop()
+            case 3:
+                #match
+                flow_controls.match()
+            case 4:
+                #file読み書き
+                rw_file.rw_file()
+        
 
 
 
