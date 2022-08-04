@@ -1,4 +1,4 @@
-# 関数の宣言
+# インポート
 import flow_controls
 import rw_file
 import my_class
@@ -36,6 +36,5 @@ def main():
                 #Class
                 my_class.run()
         
-
 if __name__ == '__main__':
     main()
